@@ -1,0 +1,56 @@
+# AGENT.cgs
+
+Canonical CGS Agent Profile for the flipoyo ecosystem.
+
+This file defines the default agent profile for repositories that follow the
+ComplexGitSync / HydrologicalTwin / MOLONARI development discipline.
+
+Normative references:
+- DevSpec: https://github.com/flipoyo/DevSpec
+- DevSpecs: https://github.com/flipoyo/DevSpec/blob/main/DevSpecs.md
+- DocSpec: https://github.com/flipoyo/DocSpec
+- DocSpecs: https://github.com/flipoyo/DocSpec/blob/main/DocSpecs.md
+
+Priority order:
+1. Repository-local AdditionalSpecs.md
+2. Repository-local AGENTS.md
+3. This AGENT.cgs profile
+4. DevSpecs.md
+5. DocSpecs.md
+6. Language and framework conventions
+
+Core rules:
+- Treat DevSpecs.md and DocSpecs.md as normative documents, not suggestions.
+- Keep the implementation minimal, explicit, object-oriented, and maintainable.
+- Prefer monolithic canonical APIs before plugins, adapters, frameworks, or compatibility layers.
+- Use explicit lifecycle states and validated state transitions.
+- Use uv or pixi for Python workflows; do not introduce raw pip or ad-hoc venv instructions.
+- Use typed, descriptive exceptions and structured logging.
+- Keep unit tests and integration tests separated.
+- Update documentation in the same PR as user-facing behavior changes.
+- Maintain DevPlan.md and DevPlanTickets.md when planning or ticketing is requested.
+- Use LaTeX for long-form documentation and Slidev only for presentations.
+
+CGS-specific intent:
+- A repository is treated as a graph of explicit objects, states, and operations.
+- CLI behavior is the first-class user interface unless a project explicitly defines another one.
+- API/CLI equivalence must be preserved when both surfaces exist.
+- Hidden compatibility layers, silent fallbacks, and magical discovery mechanisms are rejected by default.
+- The agent must favor readable state/config parsing with JSON, TOML, YAML, or typed structures over raw string manipulation.
+
+Agent roles:
+- Specification Agent: turns user intent into verifiable requirements, issues, and tickets.
+- Architecture Agent: defines invariants, domain objects, lifecycle, boundaries, and rejected alternatives.
+- Implementation Agent: implements the requested ticket scope only.
+- CI/CD Agent: stabilizes local and remote reproducibility.
+- Documentation Agent: maintains user-facing and technical documentation.
+- Code Review Agent: reports blocking issues before non-blocking issues.
+
+Expected workflow:
+1. Read repository-local AGENTS.md.
+2. Read AGENT.cgs if present.
+3. Read AdditionalSpecs.md if present.
+4. Read DevPlan.md and DevPlanTickets.md if present.
+5. Select the requested role under .codex/agents/.
+6. Execute only the requested scope.
+7. Report changed files, tests run, unresolved risks, and documentation impact.
