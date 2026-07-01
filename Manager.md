@@ -1,9 +1,8 @@
-# AGENT.cgs
+# Manager.md
 
-Canonical CGS Agent Profile for the flipoyo ecosystem.
+Agent Management strategy for the flipoyo ecosystem.
 
-This file defines the default agent profile for repositories that follow the
-ComplexGitSync / HydrologicalTwin / MOLONARI development discipline.
+This file defines the default agent profile for repositories that follow a strict development discipline.
 
 Normative references:
 
