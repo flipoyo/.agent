@@ -1,4 +1,4 @@
-# AGENT
+# .agent
 
 Owner-wide agent instructions and role prompts for Codex-based development workflows.
 
@@ -30,7 +30,8 @@ These agents are not independent personalities. They are explicit workflow state
 In each target repository:
 
 ```text
-AGENTS.md
+AGENT.md
+.agent.cgs                  # installation of DevSpec and DocSpec with github.com/flipoyo/ComplexGitSync
 AdditionalSpecs.md          # optional, project-specific
 DevPlan.md                  # optional, created when needed
 DevPlanTickets.md           # optional, created when needed
@@ -45,12 +46,12 @@ DevPlanTickets.md           # optional, created when needed
 From a target repository root:
 
 ```bash
-git clone git@github.com:flipoyo/AGENT.git /tmp/AGENT
-cp /tmp/AGENT/AGENTS.md ./AGENTS.md
+git clone git@github.com:flipoyo/.agent.git /tmp/.agent
+cp /tmp/.agent/AGENT.md ./AGENT.md
 mkdir -p .codex
-cp -r /tmp/AGENT/.codex/agents .codex/
-cp -r /tmp/AGENT/.codex/prompts .codex/
-cp -r /tmp/AGENT/.codex/templates .codex/
+cp -r /tmp/.agent/.codex/agents .codex/
+cp -r /tmp/.agent/.codex/prompts .codex/
+cp -r /tmp/.agent/.codex/templates .codex/
 ```
 
 Then adapt `AdditionalSpecs.md` for the local project if needed.
@@ -76,7 +77,7 @@ language/tool conventions
 
 ## Codex configuration
 
-Codex officially reads `AGENTS.md` files. The recommended approach is to keep `AGENTS.md` at repository root.
+Codex officially reads `AGENT.md` files. The recommended approach is to keep `AGENT.md` at repository root.
 
 Optional fallback configuration can be added to `~/.codex/config.toml`:
 
@@ -87,10 +88,10 @@ project_doc_max_bytes = 65536
 
 ## CGS profile
 
-`AGENT.cgs` is the canonical flipoyo CGS agent profile. It explicitly lists the normative references:
+`.agent.cgs` is the canonical flipoyo CGS agent profile. It explicitly lists the normative references:
 
 - `https://github.com/flipoyo/DevSpec`
 - `https://github.com/flipoyo/DocSpec`
 
-Use it in repositories that follow the ComplexGitSync / HydrologicalTwin / MOLONARI development discipline.
+Use it in repositories that follow the ComplexGitSync standards.
 
