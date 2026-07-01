@@ -13,6 +13,9 @@ Project-local references, when present:
 - DevPlan.md
 - DevPlanTickets.md
 
+In sovereign local-agent development, the target project can be cloned from
+https://github.com/flipoyo/ComplexGitSync before these files are installed using AGENT.cgs
+
 ## Normative priority
 
 When instructions conflict, apply this order:
