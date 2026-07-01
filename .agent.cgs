@@ -1,0 +1,32 @@
+# .agent dependencies
+# ──────────────────────────────────────────────────────────────────────────────
+# This file lives inside flipoyo/.agent repository (GitHub).
+# ComplexGitSync discovers it when expanding the .agent project
+#
+
+[document]
+format_version = "1.0"
+
+[project]
+name           = ".agent"
+default_branch = "main"
+
+# ── Repositories ─────────────────────────────────────────────────────────────
+
+[[repos]]
+gitprovider        = "github"
+project_owner_name = "flipoyo"
+project_name       = "DevSpec"
+default_branch     = "main"
+fallback_branch    = "main"
+access_protocol    = "ssh"
+relative_path      = "DevSpec"
+
+[[repos]]
+gitprovider        = "github"
+project_owner_name = "flipoyo"
+project_name       = "DocSpec"
+default_branch     = "main"
+fallback_branch    = "main"
+access_protocol    = "ssh"
+relative_path      = "DocSpec"
